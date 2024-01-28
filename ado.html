@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programming Concepts</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Learn Programming Concepts</h1>
+        <nav>
+            <ul>
+                       <li><a href="index.html">Home</a></li>
+                <li>
+        <div class="dropdown">
+  <button class="dropbtn">List Of Programs</button>
+   <div class="dropdown-content">
+    <a href="cSharp.html">C#</a>
+    <a href="ado.html">ADO.Net</a>
+    <a href="database.html">Database</a>
+        <a href = "aspnet.html">Asp.Net</a>
+  </div>
+</div>    </li>
+                <li><a href="knowmore.html">Know More</a></li>
+                <li><a href="all.html">All Things</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <center><p><h1> Welcome to About Page </h1> </p></center>
+<ul>
+
+<p>ADO.NET
+ 
+<p>ADO.NET is a set of classes (a framework) to interact with data sources such as databases and XML files. ADO is the acronym for ActiveX Data Objects. It allows us to connect to underlying data or databases. It has classes and methods to retrieve and manipulate data.
+ 
+The following are a few of the .NET applications that use ADO.NET to connect to a database, execute commands and retrieve data from the database.
+ASP.NET Web Applications
+Console Applications
+Windows Applications.
+Various Connection Architectures
+ 
+There are the following two types of connection architectures:
+Connected architecture: the application remains connected with the database throughout the processing.
+
+Disconnected architecture: the application automatically connects/disconnects during the processing. The application uses temporary data on the application side called a DataSet.
+Understanding ADO.NET and it's class library
+</p>
+
+<p>
+ADO.NET and class library 
+ 
+In this diagram, we can see that there are various types of applications (Web Application, Console Application, Windows Application and so on) that use ADO.NET to connect to databases (SQL Server, Oracle, OleDb, ODBC, XML files and so on).
+</p>
+Important Classes in ADO.NET
+ <p>
+We can also observe various classes in the preceding diagram. They are:
+Connection Class
+Command Class
+DataReader Class
+DataAdaptor Class
+DataSet.Class
+
+</p>
+<ol><li>Connection Class
+ 
+<p>In ADO.NET, we use these connection classes to connect to the database. These connection classes also manage transactions and connection pooling. To learn more about connection classes, start here: Connection in ADO.NET. 
+</p>
+  
+<li> Command Class
+ <p>
+The Command class provides methods for storing and executing SQL statements and Stored Procedures. The following are the various commands that are executed by the Command Class.
+ExecuteReader: Returns data to the client as rows. This would typically be an SQL select statement or a Stored Procedure that contains one or more select statements. This method returns a DataReader object that can be used to fill a DataTable object or used directly for printing reports and so forth.
+ExecuteNonQuery: Executes a command that changes the data in the database, such as an update, delete, or insert statement, or a Stored Procedure that contains one or more of these statements. This method returns an integer that is the number of rows affected by the query.
+ExecuteScalar: This method only returns a single value. This kind of query returns a count of rows or a calculated value.
+ExecuteXMLReader: (SqlClient classes only) Obtains data from an SQL Server 2000 database using an XML stream. Returns an XML Reader object.
+ </p>
+  
+   <li>DataReader Class
+ <p>
+The DataReader is used to retrieve data. It is used in conjunction with the Command class to execute an SQL Select statement and then access the returned rows. Learn more here: Data Reader in C#.
+ </p>
+
+  
+<li>DataAdapter Class
+  <p>
+ 
+The DataAdapter is used to connect DataSets to databases. The DataAdapter is most useful when using data-bound controls in Windows Forms, but it can also be used to provide an easy way to manage the connection between your application and the underlying database tables, views and Stored Procedures. Learn more here: Data Adapter in ADO.NET.
+  </p>
+
+  
+<li>DataSet Class
+ <p>
+The DataSet is the heart of ADO.NET. The DataSet is essentially a collection of DataTable objects. In turn each object contains a collection of DataColumn and DataRow objects. The DataSet also contains a Relations collection that can be used to define relations among Data Table Objects.
+ 
+How to Connect to a Database using ADO.NET
+ 
+Now let us learn how to connect to a database using ADO.NET. To create a connection, you must be familiar with connection strings. A connection string is required as a parameter to SQLConnection. A ConnectionString is a string variable (not case sensitive).
+ 
+This contains key and value pairs, like provider, server, database, userid and word as in the following:
+Server="nameof the server or IP Address of the server"
+
+<p>
+Database="name of the database"
+
+userid="user name who has permission to work with database"
+
+word="the word of userid"
+Example
+SQL Authentication
+
+String constr="server=.;database=institute;user id=rakesh;word=abc@123";
+</p>
+Or:
+<p>
+String constr="data source=.;initial catalog=institute;uid=rakesh;pwd=abc@213";
+
+Windows Authentication
+
+String constr="server=.;database=institute;trusted_connection=true"
+</p>
+Or:
+<p>
+String constr="server=.;initial catalog=institute;integrated security=true"
+How to retrieve and display data from a database
+Create a SqlConnection object using a connection string.
+
+Handle exceptions.
+
+Open the connection.
+
+Create a SQLCommand. To represent a SQLCommand like (select * from studentdetails) and attach the existing connection to it. Specify the type of SQLCommand (text/storedprocedure).
+
+Execute the command (use executereader).
+
+Get the Result (use SqlDataReader). This is a forwardonly/readonly dataobject.
+
+Close the connection
+Process the result
+Display the Result
+
+  <p>
+The following is code for connecting to a SQL Database:
+ 
+</p>
+ <p>
+You must use the System.Data.SqlClient namespace to connect to a SQL Database. In the preceding code we are using the SqlConnection class, SqlCommand class and SqlDataReader class because our application is talking to SQL Server. SQL Server only understands SQL.
+ 
+Code for connecting to Oracle Database</p>
+   <p>
+ 
+If you want to connect to an Oracle database, all you need to do is to change the connection class name from SqlConnection to OracleConnection Command class name from SqlCommand to OracleCommand and SqlDataReader to OracleDataReader and also in the beginning use the namespace System.Data.OralceClient.
+ 
+This works for OleDb and ODBC also.</p>
+
+</ul>
+  
+
+    <footer>
+        <p>&copy; 2024 BeautyInsideIndia</p>
+    </footer>
+
+    <!--<script src="script.js"></script>-->
+
+</body>
+</html>

@@ -1,0 +1,132 @@
+
+   <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programming Concepts</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+
+        #analogClock {
+            width: 200px;
+            height: 200px;
+            border: 6px solid #333;
+            border-radius: 50%;
+            position: relative;
+        }
+
+        .hand {
+            position: absolute;
+            background-color: #333;
+            transform-origin: 50% 100%;
+        }
+
+        #hourHand {
+            height: 35px;
+            width: 5px;
+            top: 50px;
+            left: 97.5px;
+        }
+
+        #minuteHand {
+            height: 50px;
+            width: 4px;
+            top: 50px;
+            left: 98px;
+        }
+
+        #secondHand {
+            height: 60px;
+            width: 2px;
+            top: 40px;
+            left: 99px;
+            background-color: red;
+        }
+     body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 100px;
+            font-size: 2em;
+        }
+ 
+ 
+    </style>
+</head>
+<body> 
+<header>
+
+
+    <script>
+        function updateClock() {
+            var now = new Date();
+            var hours = now.getHours();
+            var minutes = now.getMinutes();
+            var seconds = now.getSeconds();
+    
+            // Add leading zeros if needed
+            hours = (hours < 10) ? "0" + hours : hours;
+            minutes = (minutes < 10) ? "0" + minutes : minutes;
+            seconds = (seconds < 10) ? "0" + seconds : seconds;
+    
+            // Display the time
+            document.getElementById("digitalClock").innerHTML = hours + ":" + minutes + ":" + seconds;
+    
+            // Update every 1000ms (1 second)
+            setTimeout(updateClock, 1000);
+        }
+    
+        // Initial call to display the clock
+        updateClock();
+    </script>
+    
+    <h1>Learn Programming Concepts</h1>
+    <nav>
+        <ul>
+<li><a href="index.html">Home</a></li>
+            <li>
+    <div class="dropdown">
+<button class="dropbtn">List Of Programs</button>
+<div class="dropdown-content">
+<a href="cSharp.html">C#</a>
+<a href="ado.html">ADO.Net</a>
+<a href="database.html">Database</a>
+       <a href = "aspnet.html">Asp.Net</a>
+</div>
+</div>    </li>
+            <li><a href="knowmore.html">Know More</a></li>
+            <li><a href="all.html">All Things</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    
+</header>
+
+
+ 
+   
+   
+
+
+
+<centre> 
+        <img src="aspnet-core-1.png"  width="1080" height="1870"></centre>
+
+        <!-- Add more blog posts here -->
+    </main>
+    
+ 
+    <!--<script src="script.js"></script>-->
+</body>
+     <footer>
+        <p>&copy; 2024 BeautyInsideIndia</p>
+    </footer>
+</html>
